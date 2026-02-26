@@ -1,0 +1,45 @@
+/* --- GLOBAL PREMIUM MOTION SYSTEM --- */
+
+/* INITIAL REVEAL STATES */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* ACTIVE STATE */
+.in-view {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* EXIT STATES (For Scrolling Up) */
+.exit-left {
+  transform: translateX(-60px) !important;
+  opacity: 0 !important;
+}
+
+.exit-right {
+  transform: translateX(60px) !important;
+  opacity: 0 !important;
+}
+
+.exit-up {
+  transform: translateY(50px) !important;
+  opacity: 0 !important;
+}

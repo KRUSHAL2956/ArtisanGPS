@@ -1,0 +1,111 @@
+/* --- SECTION 5: THE INTELLIGENCE ENGINE --- */
+
+.intelligence-section {
+  background: #F8FAFC;
+  padding-top: 170px;
+  padding-bottom: 170px;
+}
+
+.intelligence-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- HEADER --- */
+.intelligence-header {
+  text-align: center;
+}
+
+.intelligence-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #0B0F14;
+  margin-bottom: 24px;
+}
+
+.intelligence-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4A5B68;
+  max-width: 720px;
+  margin: 0 auto 100px auto;
+}
+
+/* --- SPLIT GRID --- */
+.intelligence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* --- LEFT SIDE: ARCHITECTURE BLOCKS --- */
+.architecture-block {
+  background: #FFFFFF;
+  padding: 28px 32px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.architecture-block:hover {
+  transform: translateX(8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.architecture-block-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0B3C5D;
+}
+
+.architecture-block-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #4A5B68;
+  margin-top: 6px;
+}
+
+/* --- RIGHT SIDE: INTELLIGENCE EXPLANATION --- */
+.intelligence-text-block {
+  margin-bottom: 36px;
+}
+
+.intelligence-text-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  color: #0B0F14;
+  margin-bottom: 12px;
+}
+
+.intelligence-text-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4A5B68;
+}
+
+/* --- RESPONSIVE RULES --- */
+@media (max-width: 1024px) {
+  .intelligence-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intelligence-section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+  .intelligence-text-block {
+    text-align: center;
+  }
+}

@@ -1,0 +1,210 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(11, 31, 42, 0.02); /* Very subtle shadow */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px; /* Max width 1200px */
+  height: 100%;
+  padding: 0 24px; /* Left and right padding: 24px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Left Side: Brand Area --- */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between icon and text: 8px */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.brand-icon {
+  color: var(--color-primary);
+}
+
+.brand-text {
+  font-family: var(--font-family-base);
+  font-weight: 700; /* Bold */
+  font-size: 21px; /* 20-22px */
+  color: var(--color-text-primary); /* #0B0F14 */
+  letter-spacing: -0.5px;
+}
+
+/* --- Center: Navigation Links --- */
+.navbar-links {
+  display: flex;
+  gap: 32px; /* 32px gap between items */
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 15px; /* 15-16px */
+  color: var(--color-text-primary); /* #0B0F14 */
+  font-weight: 500; /* Medium */
+  text-decoration: none;
+  transition: color 200ms ease; /* Smooth 200ms transition */
+}
+
+.nav-link:hover {
+  color: var(--color-primary); /* #0B3C5D */
+}
+
+/* --- Right Side: Auth Buttons --- */
+.navbar-auth {
+  display: flex;
+  gap: 16px; /* Spacing between Login and Sign Up: 16px */
+  align-items: center;
+}
+
+.btn-login {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+  white-space: nowrap;
+}
+
+.btn-login:hover {
+  background-color: #F0F4F8; /* Light background tint */
+}
+
+.btn-signup {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: filter 200ms ease;
+  white-space: nowrap;
+}
+
+.btn-signup:hover {
+  filter: brightness(0.9); /* Slight darken effect only */
+}
+
+/* --- Mobile Menu Toggle --- */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* --- Mobile Dropdown Menu --- */
+.mobile-menu {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(11, 31, 42, 0.05); /* Soft shadow */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+  z-index: 999;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav-link {
+  font-size: 16px;
+  color: var(--color-text-primary); /* #0B0F14 */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-primary);
+}
+
+.mobile-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+/* --- Main content wrapper --- */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 72px; /* Offset for fixed navbar */
+}
+
+
+/* --- RESPONSIVENESS --- */
+
+/* Below 992px: Hide center links, show hamburger. Keep logo and auth visible. */
+@media (max-width: 992px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Keep logo and auth buttons visible */
+  .navbar-auth.desktop-auth {
+    display: flex;
+  }
+  
+  /* Mobile menu auth buttons hidden when desktop auth is visible */
+  .mobile-menu .mobile-auth {
+    display: none;
+  }
+}
+
+/* Below 768px: Collapse auth buttons into menu. */
+@media (max-width: 768px) {
+  .navbar-auth.desktop-auth {
+    display: none;
+  }
+
+  /* Show auth group in mobile menu */
+  .mobile-menu .mobile-auth {
+    display: flex;
+  }
+}

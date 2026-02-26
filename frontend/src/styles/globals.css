@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-heading);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+h1 { 
+  font-size: var(--font-size-h1); 
+  font-weight: var(--font-weight-bold); 
+}
+
+h2 { 
+  font-size: var(--font-size-h2); 
+  font-weight: var(--font-weight-semibold); 
+}
+
+h3 { 
+  font-size: var(--font-size-h3); 
+  font-weight: var(--font-weight-medium); 
+}
+
+p {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: var(--space-2);
+}
+
+small, .text-small {
+  font-size: var(--font-size-sm);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

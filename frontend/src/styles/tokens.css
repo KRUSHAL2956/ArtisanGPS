@@ -1,0 +1,51 @@
+:root {
+  /* 1. ROOT COLOR SYSTEM */
+  --color-primary: #0B3C5D;
+  --color-accent: #00A8A8;
+  --color-bg: #F5F7FA;
+  --color-card: #FFFFFF;
+  --color-border: #E3E8EF;
+  --color-text-primary: #0B0F14;
+  --color-text-heading: #1C2733;
+  --color-text-secondary: #3A4A58;
+  --color-text-muted: #5C6B78;
+  --color-success: #2E7D32;
+  --color-warning: #FFB703;
+  --color-danger: #E63946;
+
+  /* 2. TYPOGRAPHY SYSTEM */
+  --font-family-base: 'Inter', sans-serif;
+  
+  --font-size-h1: 56px;
+  --font-size-h2: 36px;
+  --font-size-h3: 22px;
+  --font-size-body: 16px;
+  --font-size-sm: 14px;
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+
+  /* 3. SPACING SYSTEM (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* 4. BORDER & RADIUS SYSTEM */
+  --radius-card: 14px;
+  --radius-button: 12px;
+  --border-width: 1px;
+  --border-style: solid;
+  
+  /* Shadows */
+  --shadow-subtle: 0 4px 12px rgba(11, 31, 42, 0.05);
+  --shadow-elevation: 0 8px 24px rgba(11, 31, 42, 0.08);
+}

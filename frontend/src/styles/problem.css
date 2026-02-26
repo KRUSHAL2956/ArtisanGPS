@@ -1,0 +1,102 @@
+/* --- SECTION 2: THE DECISION PROBLEM --- */
+
+.problem-section {
+  background: #0B0F14;
+  padding-top: 180px;
+  padding-bottom: 180px;
+}
+
+.problem-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.problem-text {
+  text-align: center;
+}
+
+.problem-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  color: #FFFFFF;
+  margin-bottom: 28px;
+}
+
+.problem-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #B8C2CC;
+  max-width: 720px;
+  margin: 0 auto 80px auto;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.problem-card {
+  background: #11161C;
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+
+.problem-card-icon {
+  margin-bottom: 18px;
+  color: #00A8A8;
+}
+
+.problem-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.problem-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #9AA8B5;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .problem-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+  .problem-card {
+    padding: 32px;
+    text-align: center;
+  }
+  .problem-card-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
