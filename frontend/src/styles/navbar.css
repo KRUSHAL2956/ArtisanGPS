@@ -4,9 +4,9 @@
   left: 0;
   width: 100%;
   height: 72px;
-  background-color: var(--color-card);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 2px 8px rgba(11, 31, 42, 0.02); /* Very subtle shadow */
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none; /* Removed as requested */
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /* --- Left Side: Brand Area --- */
@@ -48,6 +49,9 @@
   display: flex;
   gap: 32px; /* 32px gap between items */
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -62,47 +66,28 @@
   color: var(--color-primary); /* #0B3C5D */
 }
 
-/* --- Right Side: Auth Buttons --- */
-.navbar-auth {
+/* --- Right Side: Login & Menu Toggle --- */
+.navbar-right {
   display: flex;
-  gap: 16px; /* Spacing between Login and Sign Up: 16px */
   align-items: center;
+  gap: 24px;
 }
 
-.btn-login {
-  background: transparent;
-  border: 1px solid var(--color-primary);
+.nav-login-btn {
+  font-size: 15px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 200ms ease;
+  padding: 8px 0;
+}
+
+.nav-login-btn:hover {
   color: var(--color-primary);
-  padding: 10px 18px;
-  border-radius: 12px;
-  font-family: var(--font-family-base);
-  font-weight: 500;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 200ms ease;
-  white-space: nowrap;
 }
 
-.btn-login:hover {
-  background-color: #F0F4F8; /* Light background tint */
-}
-
-.btn-signup {
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-family: var(--font-family-base);
-  font-weight: 500;
-  font-size: 15px;
-  cursor: pointer;
-  transition: filter 200ms ease;
-  white-space: nowrap;
-}
-
-.btn-signup:hover {
-  filter: brightness(0.9); /* Slight darken effect only */
+.desktop-only {
+  display: block;
 }
 
 /* --- Mobile Menu Toggle --- */
@@ -139,7 +124,7 @@
 
 .mobile-nav-link {
   font-size: 16px;
-  color: var(--color-text-primary); /* #0B0F14 */
+  color: #0B0F14;
   font-weight: 500;
   text-decoration: none;
   transition: color 200ms ease;
@@ -149,10 +134,10 @@
   color: var(--color-primary);
 }
 
-.mobile-auth {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.mobile-menu-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 4px 0;
 }
 
 .full-width {
@@ -182,29 +167,11 @@
     display: none;
   }
   
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  /* Keep logo and auth buttons visible */
-  .navbar-auth.desktop-auth {
-    display: flex;
+  .desktop-only {
+    display: none !important;
   }
   
-  /* Mobile menu auth buttons hidden when desktop auth is visible */
-  .mobile-menu .mobile-auth {
-    display: none;
-  }
-}
-
-/* Below 768px: Collapse auth buttons into menu. */
-@media (max-width: 768px) {
-  .navbar-auth.desktop-auth {
-    display: none;
-  }
-
-  /* Show auth group in mobile menu */
-  .mobile-menu .mobile-auth {
-    display: flex;
+  .mobile-menu-btn {
+    display: block;
   }
 }

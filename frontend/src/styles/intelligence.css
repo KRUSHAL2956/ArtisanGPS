@@ -1,13 +1,13 @@
-/* --- SECTION 5: THE INTELLIGENCE ENGINE --- */
+/* --- SECTION 4: THE INTELLIGENCE ENGINE (COMPRESSED) --- */
 
 .intelligence-section {
-  background: #F8FAFC;
-  padding-top: 170px;
-  padding-bottom: 170px;
+  background: #FFFFFF;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .intelligence-inner {
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -23,38 +23,30 @@
   font-weight: 700;
   line-height: 1.1;
   color: #0B0F14;
-  margin-bottom: 24px;
+  margin-bottom: 60px;
 }
 
-.intelligence-subheading {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #4A5B68;
-  max-width: 720px;
-  margin: 0 auto 100px auto;
-}
-
-/* --- SPLIT GRID --- */
-.intelligence-grid {
+/* --- GRID --- */
+.intelligence-grid-compressed {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 100px;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-/* --- LEFT SIDE: ARCHITECTURE BLOCKS --- */
+/* --- CARDS --- */
 .architecture-block {
-  background: #FFFFFF;
-  padding: 28px 32px;
+  background: #F7F9FC;
+  padding: 36px 28px;
   border-radius: 18px;
-  margin-bottom: 28px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.03);
   transition: transform 300ms ease, box-shadow 300ms ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .architecture-block:hover {
-  transform: translateX(8px);
+  transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
@@ -63,49 +55,32 @@
   font-size: 16px;
   font-weight: 600;
   color: #0B3C5D;
+  margin-bottom: 12px;
 }
 
 .architecture-block-desc {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: #4A5B68;
-  margin-top: 6px;
-}
-
-/* --- RIGHT SIDE: INTELLIGENCE EXPLANATION --- */
-.intelligence-text-block {
-  margin-bottom: 36px;
-}
-
-.intelligence-text-title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  font-weight: 600;
-  color: #0B0F14;
-  margin-bottom: 12px;
-}
-
-.intelligence-text-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-  color: #4A5B68;
+  line-height: 1.6;
 }
 
 /* --- RESPONSIVE RULES --- */
 @media (max-width: 1024px) {
-  .intelligence-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
+  .intelligence-grid-compressed {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .intelligence-section {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
-  .intelligence-text-block {
-    text-align: center;
+  .intelligence-heading {
+    margin-bottom: 40px;
+  }
+  .intelligence-grid-compressed {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,313 @@
+/* =========================================================================
+   PREMIUM AUTH PAGE (60/40 SPLIT)
+   Minimal, structured, production-ready.
+   ========================================================================= */
+
+.auth-page-premium {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F5F9;
+  padding: 60px 40px; /* Generous outer padding */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Subtle fade in on load */
+  animation: authFadeIn 500ms ease-out forwards;
+}
+
+@keyframes authFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================================================================
+   MAIN CONTAINER (1280px)
+   ========================================================================= */
+.auth-container {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 720px;
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08); /* Soft subtle shadow */
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================================================
+   LEFT SIDE - IMAGE (60%)
+   ========================================================================= */
+.auth-image-side {
+  width: 60%;
+  height: auto;
+  min-height: 100%;
+  position: relative;
+  background-color: #E6E2DB; /* Warm beige fallback */
+}
+
+.auth-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================================================
+   RIGHT SIDE - FORM (40%)
+   ========================================================================= */
+.auth-form-side {
+  width: 40%;
+  height: auto;
+  min-height: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form-inner {
+  padding: 90px 80px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centered */
+  margin: 0 auto;
+}
+
+.auth-brand-link {
+  display: inline-block;
+  margin-bottom: 48px;
+  text-decoration: none;
+}
+
+.auth-brand-logo {
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Transition Wrapper */
+.auth-view-wrapper {
+  position: relative;
+  display: grid;
+  flex: 1;
+}
+
+.auth-view {
+  grid-area: 1 / 1;
+  width: 100%;
+  max-width: 420px; /* Ensure optimal reading/input width */
+  margin: 0 auto; /* Center within the column */
+  
+  /* Reset states for invisible views */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms;
+}
+
+.show-login .login-view,
+.show-signup .signup-view {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Headers */
+.auth-view-header {
+  margin-bottom: 32px;
+}
+
+.auth-view-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827; /* Dark neutral */
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.auth-view-header p {
+  font-size: 15px;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Forms */
+.premium-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Default spacing between inputs */
+}
+
+.premium-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.premium-input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.premium-input-group input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  font-size: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 12px;
+  color: #1E293B;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.premium-input-group input::placeholder {
+  color: #94A3B8;
+}
+
+.premium-input-group input:focus {
+  border-color: #0B3C5D; /* Brand navy ring */
+  box-shadow: 0 0 0 3px rgba(11, 60, 93, 0.1);
+}
+
+/* Meta: Remember Me / Forgot */
+.premium-form-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -8px; /* Pull up closer to password */
+  margin-bottom: 8px; /* 32px visual gap to button (24px gap + 8px margin) */
+}
+
+.premium-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748B;
+  cursor: pointer;
+}
+
+.premium-checkbox input {
+  accent-color: #0B3C5D;
+  cursor: pointer;
+}
+
+.premium-forgot-link {
+  font-size: 14px;
+  color: #64748B;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.premium-forgot-link:hover {
+  color: #0B3C5D;
+}
+
+/* Primary Button */
+.btn-premium-primary {
+  width: 100%;
+  height: 56px;
+  background-color: #0B3C5D;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 250ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-premium-primary:hover {
+  background-color: #092C45;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(11, 60, 93, 0.15);
+}
+
+.btn-premium-primary:active {
+  transform: translateY(0);
+}
+
+/* Footer Links */
+.premium-auth-footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footer-mute {
+  color: #64748B;
+}
+
+.btn-switch-mode {
+  background: none;
+  border: none;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 200ms ease;
+}
+
+.btn-switch-mode:hover {
+  color: #0B3C5D;
+  text-decoration: underline;
+}
+
+/* =========================================================================
+   RESPONSIVENESS (< 992px)
+   ========================================================================= */
+@media (max-width: 992px) {
+  .auth-page-premium {
+    padding: 24px;
+  }
+
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  
+  /* Stack image on top, form below */
+  .auth-image-side {
+    width: 100%;
+    height: 360px; /* Fixed height for image on mobile */
+    min-height: auto;
+  }
+  
+  .auth-form-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .auth-form-inner {
+    padding: 48px 32px;
+  }
+  
+  .auth-brand-link {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page-premium {
+    padding: 16px;
+  }
+  
+  .auth-form-inner {
+    padding: 40px 24px;
+  }
+  
+  .auth-image-side {
+    height: 280px;
+  }
+}

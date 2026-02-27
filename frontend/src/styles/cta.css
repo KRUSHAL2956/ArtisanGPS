@@ -17,6 +17,7 @@
   background: #FFFFFF;
   padding: 100px 80px;
   border-radius: 32px;
+  border: 1px solid rgba(0,0,0,0.08);
   text-align: center;
   box-shadow: 0 40px 120px rgba(0,0,0,0.06), 0 15px 40px rgba(0,0,0,0.04);
   position: relative;
@@ -31,7 +32,7 @@
   left: 0;
   right: 0;
   height: 50%;
-  background: radial-gradient(circle at top center, rgba(11, 60, 93, 0.04) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle at top center, rgba(11, 60, 93, 0.08) 0%, rgba(255,255,255,0) 70%);
   pointer-events: none;
 }
 
@@ -59,7 +60,7 @@
 /* --- CTA BUTTON SYSTEM --- */
 .cta-button-group {
   display: inline-flex;
-  gap: 28px;
+  gap: 16px;
   position: relative;
 }
 

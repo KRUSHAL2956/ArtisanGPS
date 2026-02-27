@@ -1,0 +1,866 @@
+/* =========================================================================
+   DASHBOARD STYLES
+   ========================================================================= */
+
+/* --- Header Strip --- */
+.dashboard-header-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E3E8EF; /* Subtle bottom divider line */
+  box-shadow: none; /* No shadow */
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- Left: Context --- */
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B; /* Muted text */
+}
+
+/* --- Center: Timeframe --- */
+.header-center {
+  display: flex;
+  align-items: center;
+}
+
+.timeframe-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.timeframe-btn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1E293B0A; /* Light gray fallback #F1F5F9 */
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.timeframe-btn:hover {
+  background-color: #1E293B14;
+}
+
+.timeframe-btn.active {
+  background-color: #0B3C5D; /* Deep blue background */
+  color: #FFFFFF;
+}
+
+/* --- Right: Status --- */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.confidence-badge {
+  background-color: #E6F7F5; /* Light teal background */
+  color: #0D8271; /* Teal text */
+  padding: 4px 12px;
+  border-radius: 9999px; /* Pill */
+  font-size: 13px;
+  font-weight: 700; /* Bold small text */
+  display: inline-block;
+}
+
+.header-timestamp {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94A3B8; /* Small muted text */
+}
+
+/* --- Dashboard Page Container --- */
+.dashboard-page {
+  min-height: calc(100vh - 72px);
+  background-color: #F8FAFC; /* Soft background under the strip */
+  width: 100%;
+}
+
+/* =========================================================================
+   KPI ROW
+   ========================================================================= */
+
+.kpi-row-wrapper {
+  padding: 32px 32px 0 32px; /* Pad inside the main dashboard container */
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.kpi-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EF;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none; /* explicitly requested no heavy shadow */
+}
+
+.kpi-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #64748B;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.kpi-value {
+  font-size: 30px; /* 28-32px requested */
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.kpi-insight {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dir-icon {
+  font-weight: 700;
+}
+
+.indicator-positive {
+  color: #059669; /* Green */
+}
+
+.indicator-negative {
+  color: #DC2626; /* Red */
+}
+
+.indicator-medium {
+  color: #D97706; /* Amber */
+}
+
+/* --- KPI Responsive Rules --- */
+@media (max-width: 1280px) {
+  .kpi-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+  .kpi-row-wrapper {
+    padding: 24px 24px 0 24px;
+  }
+}
+
+/* =========================================================================
+   CHART SECTION
+   ========================================================================= */
+
+.chart-section-wrapper {
+  padding: 32px;
+}
+
+.chart-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EF;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: none; /* No heavy shadow */
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Custom Legend */
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.legend-marker {
+  width: 12px;
+  height: 4px; /* Line marker style instead of dot */
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.marker-historical {
+  background-color: #0B3C5D;
+}
+
+.marker-forecast {
+  background-color: #00A8A8;
+  border: 1px dashed rgba(255,255,255,0.5); /* Visual cue for dashed */
+}
+
+.marker-confidence {
+  background-color: rgba(0, 168, 168, 0.2);
+  height: 12px; /* Taller marker to represent range/band */
+}
+
+/* Canvas Container */
+.chart-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 420px; /* Minimum 420px height requested */
+  min-height: 420px;
+}
+
+/* --- Chart Responsive Rules --- */
+@media (max-width: 992px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .chart-section-wrapper {
+    padding: 24px;
+  }
+  .chart-card {
+    padding: 24px;
+  }
+  .chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .chart-canvas-container {
+    height: 320px; /* Reduce minimum height on very small screens */
+    min-height: 320px;
+  }
+}
+
+/* =========================================================================
+   INSIGHT PANEL SECTION
+   ========================================================================= */
+
+.insight-section-wrapper {
+  padding: 0 32px 32px 32px; /* Pad sides and bottom */
+}
+
+.insight-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EF;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: none;
+}
+
+.insight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.insight-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.risk-badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Badge variants */
+.risk-low {
+  background-color: #E6F7F5;
+  color: #0D8271;
+}
+
+.risk-moderate {
+  background-color: #FEF3C7; /* Amber tint */
+  color: #D97706;
+}
+
+.risk-high {
+  background-color: #FEE2E2; /* Red tint */
+  color: #DC2626;
+}
+
+/* 3 Blocks Layout */
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 1px solid #F1F5F9; /* Subtle divider from header */
+  padding-top: 24px;
+}
+
+.insight-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.insight-block-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.insight-block-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- Insight Responsive Rules --- */
+@media (max-width: 992px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .insight-section-wrapper {
+    padding: 0 24px 24px 24px;
+  }
+  .insight-card {
+    padding: 24px;
+  }
+}
+/* =========================================================================
+   DECISION RECOMMENDATION SECTION (60/40 Split)
+   ========================================================================= */
+
+.decision-wrapper {
+  padding: 0 32px 32px 32px;
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  gap: 32px;
+}
+
+.decision-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EF;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748B;
+  letter-spacing: 0.02em;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+/* --- Left: Pricing & Optimization --- */
+
+.decision-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-divider {
+  height: 1px;
+  background-color: #F1F5F9;
+  margin: 32px 0;
+}
+
+.pricing-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.pricing-metric {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.pricing-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.pricing-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+}
+
+.detail-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.text-positive {
+  color: #059669;
+}
+
+.text-negative {
+  color: #DC2626;
+}
+
+/* Optimization Block */
+.optimization-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.opt-metric-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.align-right {
+  align-items: flex-end;
+}
+
+.opt-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.opt-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.progress-percent {
+  color: #0B3C5D; /* Dark brand blue for progress text */
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: #F1F5F9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #00A8A8; /* Teal fill */
+  border-radius: 4px;
+}
+
+
+/* --- Right: Cost Guard --- */
+.cost-guard-card {
+  background-color: #F8FAFC; /* Soft tinted background */
+  border: 1px solid #E3E8EF;
+}
+
+.cost-guard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.guard-status-pill {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.status-safe {
+  background-color: #E6F7F5;
+  color: #0D8271;
+}
+
+.status-warning {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.status-stop {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.guard-message {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+.guard-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.guard-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guard-metric-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.guard-metric-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* --- Decision Responsive Rules --- */
+@media (max-width: 1200px) {
+  .decision-grid {
+    grid-template-columns: 50% 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .decision-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pricing-details-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .decision-wrapper {
+    padding: 0 24px 24px 24px;
+  }
+  .decision-card {
+    padding: 24px;
+  }
+  .pricing-details-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* =========================================================================
+   CLUSTER CONNECT PREVIEW SECTION
+   ========================================================================= */
+
+.cluster-wrapper {
+  padding: 0 32px 32px 32px;
+}
+
+.cluster-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E3E8EF;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: none;
+}
+
+.cluster-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cluster-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.cluster-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0B3C5D; /* Brand Blue */
+  text-decoration: none;
+  transition: opacity 200ms ease;
+}
+
+.cluster-link:hover {
+  opacity: 0.8;
+}
+
+.cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 24px;
+}
+
+.cluster-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.cluster-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px 0;
+}
+
+/* --- Block 1: Table --- */
+.cluster-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cluster-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94A3B8;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.cluster-table td {
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.cluster-table tr:last-child td {
+  border-bottom: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-dark {
+  color: #111827;
+}
+
+.text-medium {
+  color: #D97706; /* Amber */
+}
+
+/* --- Block 2: Demand Velocity Bars --- */
+.velocity-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.velocity-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.velocity-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.velocity-track {
+  width: 100%;
+  height: 6px;
+  background-color: #F1F5F9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.velocity-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.fill-high {
+  background-color: #059669; /* Green */
+}
+
+.fill-medium {
+  background-color: #D97706; /* Amber */
+}
+
+.fill-low {
+  background-color: #94A3B8; /* Gray/Muted */
+}
+
+/* --- Block 3: Opportunity Score --- */
+.align-center-block {
+  align-items: center;
+  text-align: center;
+}
+
+.opportunity-score-container {
+  margin: 12px 0;
+}
+
+.opportunity-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0B3C5D; /* Big brand blue score */
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.opportunity-max {
+  font-size: 20px;
+  font-weight: 600;
+  color: #64748B;
+  margin-left: 4px;
+}
+
+.opportunity-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 8px 0 0 0;
+  max-width: 250px;
+}
+
+
+/* --- Cluster Responsive Rules --- */
+@media (max-width: 992px) {
+  .cluster-grid {
+    grid-template-columns: 1fr; /* Stack vertically on tablet/mobile */
+    gap: 32px;
+  }
+  .align-center-block {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .opportunity-text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .cluster-wrapper {
+    padding: 0 24px 24px 24px;
+  }
+  .cluster-card {
+    padding: 24px;
+  }
+}

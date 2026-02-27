@@ -1,102 +1,96 @@
-/* --- SECTION 2: THE DECISION PROBLEM --- */
+/* --- COMBINED PROBLEM + SOLUTION SECTION --- */
 
-.problem-section {
-  background: #0B0F14;
-  padding-top: 180px;
-  padding-bottom: 180px;
+.problem-solution-section {
+  background: #F7F9FC;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
-.problem-inner {
-  max-width: 1100px;
+.problem-solution-inner {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.problem-text {
-  text-align: center;
-}
-
-.problem-heading {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.4px;
-  color: #FFFFFF;
-  margin-bottom: 28px;
-}
-
-.problem-subheading {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #B8C2CC;
-  max-width: 720px;
-  margin: 0 auto 80px auto;
-}
-
-.problem-grid {
+.problem-solution-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
-.problem-card {
-  background: #11161C;
-  padding: 50px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+.pain-column, .solution-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.problem-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+.pain-card {
+  background: #FFFFFF;
+  padding: 36px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  transition: transform 300ms ease;
 }
 
-
-.problem-card-icon {
-  margin-bottom: 18px;
-  color: #00A8A8;
+.pain-card:hover {
+  transform: translateY(-4px);
 }
 
-.problem-card-title {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  font-weight: 600;
+.solution-card {
+  background: #0B3C5D;
+  padding: 36px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
   color: #FFFFFF;
-  margin-bottom: 16px;
+  transition: transform 300ms ease;
 }
 
-.problem-card-text {
+.solution-card:hover {
+  transform: translateY(-4px);
+}
+
+.pain-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 600;
+  color: #0B0F14;
+  margin-bottom: 12px;
+}
+
+.pain-card-text {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
-  line-height: 1.7;
-  color: #9AA8B5;
+  color: #4A5B68;
+  line-height: 1.6;
+}
+
+.solution-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.solution-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
 }
 
 /* RESPONSIVENESS */
-@media (max-width: 1024px) {
-  .problem-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 992px) {
+  .problem-solution-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .problem-section {
+  .problem-solution-section {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-  .problem-grid {
-    grid-template-columns: 1fr;
-  }
-  .problem-card {
-    padding: 32px;
-    text-align: center;
-  }
-  .problem-card-icon {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
