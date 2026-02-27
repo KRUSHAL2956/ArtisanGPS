@@ -20,7 +20,8 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/');
+    localStorage.setItem('isAuthenticated', 'true');
+    navigate('/dashboard');
   };
 
   return (
